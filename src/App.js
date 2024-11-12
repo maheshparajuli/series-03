@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React, { useState } from 'react';
+import PostForm from './Components/PostForm';
+import PostList from './Components/PostList';
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
+  const [posts, setPosts] = useState([]);
+
+  const addPost = (title, content) => {
+    const newPost = {
+      id: uuidv4(),
+      title,
+      content,
+      date: new Date().toLocaleDateString(),
+    };
+    setPosts([newPost, ...posts]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Simple Blog App</h1>
+      <PostForm addPost={addPost} />
+      <PostList posts={posts} />
     </div>
   );
 }
