@@ -1,42 +1,56 @@
+/* PostForm.css */
 
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    margin-bottom: 20px;
+/* Form Animation */
+.post-form-enter {
+    opacity: 0;
   }
   
-  form h2 {
-    color: #444;
-    font-size: 1.5rem;
+  .post-form-enter-active {
+    opacity: 1;
+    transition: opacity 500ms;
   }
   
-  input[type="text"],
-  textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  .post-form-exit {
+    opacity: 1;
   }
   
-  button {
-    padding: 10px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  .post-form-exit-active {
+    opacity: 0;
+    transition: opacity 500ms;
   }
   
-  button:hover {
-    background-color: #0056b3;
+  /* Title Animation */
+  .title-enter {
+    transform: translateX(-50px);
+    opacity: 0;
   }
   
+  .title-enter-active {
+    transform: translateX(0);
+    opacity: 1;
+    transition: transform 500ms, opacity 500ms;
+  }
+  
+  /* Content Animation */
+  .content-enter {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  
+  .content-enter-active {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 500ms, opacity 500ms;
+  }
+  
+  /* Button Animation */
+  .button-enter {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  
+  .button-enter-active {
+    transform: scale(1);
+    opacity: 1;
+    transition: transform 300ms, opacity 300ms;
+  }
