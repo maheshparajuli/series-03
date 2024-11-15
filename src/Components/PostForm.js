@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react';
 
+
+
 function PostForm({ addPost }) {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
