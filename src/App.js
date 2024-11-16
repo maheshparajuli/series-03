@@ -1,13 +1,8 @@
-
 import React, { useState } from 'react';
 import PostForm from './Components/PostForm';
 import PostList from './Components/PostList';
 import { v4 as uuidv4 } from 'uuid';
-import './PostForm.css';
 import './App.css';
-
-
-
 
 function App() {
   const [posts, setPosts] = useState([]);
