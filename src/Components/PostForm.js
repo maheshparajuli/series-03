@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { Alert, AlertTitle } from "@/components/ui/alert";
 
 const PostForm = ({ addPost }) => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
   
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,8 +13,6 @@ const PostForm = ({ addPost }) => {
       await addPost(title, content);
       setTitle('');
       setContent('');
-      setShowSuccess(true);
-      setTimeout(() => setShowSuccess(false), 3000);
     } finally {
       setIsSubmitting(false);
     }
@@ -29,12 +25,6 @@ const PostForm = ({ addPost }) => {
           <h2 className="text-2xl font-bold text-gray-900">Create a New Post</h2>
           <p className="text-gray-600">Share your thoughts with the community</p>
         </div>
-
-        {showSuccess && (
-          <Alert className="bg-green-50 text-green-800 border-green-200">
-            <AlertTitle>Post created successfully!</AlertTitle>
-          </Alert>
-        )}
 
         <div className="space-y-4">
           <div>
