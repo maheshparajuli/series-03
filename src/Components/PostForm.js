@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../PostForm.css'; 
 
 const PostForm = ({ addPost }) => {
   const [title, setTitle] = useState('');
@@ -19,7 +20,8 @@ const PostForm = ({ addPost }) => {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto p-6">
+    // Add the post-form class to the outer div
+    <div className="post-form">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="space-y-2">
           <h2 className="text-2xl font-bold text-gray-900">Create a New Post</h2>
@@ -40,7 +42,6 @@ const PostForm = ({ addPost }) => {
               required
               minLength={3}
               maxLength={100}
-              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
             />
           </div>
 
@@ -56,7 +57,6 @@ const PostForm = ({ addPost }) => {
               required
               minLength={10}
               rows={6}
-              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
             />
           </div>
         </div>
@@ -65,13 +65,6 @@ const PostForm = ({ addPost }) => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`
-              rounded-md px-4 py-2 text-sm font-semibold text-white shadow-sm
-              ${isSubmitting 
-                ? 'bg-gray-400 cursor-not-allowed' 
-                : 'bg-blue-600 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'
-              }
-            `}
           >
             {isSubmitting ? 'Submitting...' : 'Create Post'}
           </button>
