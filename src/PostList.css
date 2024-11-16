@@ -1,36 +1,103 @@
 /* PostList.css */
 
 .post-list {
-    margin-top: 2rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.post-list h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.posts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.post-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.post-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.post-date {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.post-content {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+  padding: 0 0.5rem;
+}
+
+.post-content.expanded {
+  height: auto;
+  padding: 1rem 0.5rem;
+  border-top: 1px solid #eee;
+}
+
+.no-posts {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 2rem;
+  background: #f8f8f8;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .post-card {
+    background: #2a2a2a;
   }
-  
-  .post-list h2 {
-    margin-bottom: 1rem;
+
+  .post-header h3 {
+    color: #fff;
   }
-  
+
+  .post-date {
+    color: #aaa;
+  }
+
+  .post-content {
+    color: #ddd;
+  }
+
+  .post-content.expanded {
+    border-top-color: #444;
+  }
+
   .no-posts {
-    font-style: italic;
-    color: #666;
+    background: #333;
+    color: #aaa;
   }
-  
-  .post-enter {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  
-  .post-enter-active {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 500ms, transform 500ms;
-  }
-  
-  .post-exit {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .post-exit-active {
-    opacity: 0;
-    transform: translateY(-50px);
-    transition: opacity 300ms, transform 300ms;
-  }
+}
