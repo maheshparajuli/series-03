@@ -1,6 +1,7 @@
+
 import React from 'react';
 import Post from './Post';
-
+import '../PostList.css';
 
 function PostList({ posts }) {
   return (
@@ -9,11 +10,11 @@ function PostList({ posts }) {
       {posts.length === 0 ? (
         <p className="no-posts">No posts yet!</p>
       ) : (
-        posts.map((post) => (
-          <div key={post.id}>
-            <Post post={post} />
-          </div>
-        ))
+        <div className="posts-container">
+          {posts.map((post) => (
+            <Post key={post.id} post={post} />
+          ))}
+        </div>
       )}
     </div>
   );
