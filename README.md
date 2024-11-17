@@ -43,8 +43,8 @@ A modern, interactive blog application built with React that allows users to cre
 
 1. Clone the repository:
 ```bash
-git clone [your-repository-url]
-cd [repository-name]
+git clone https://github.com/maheshparajuli/series-03.git
+cd series-03
 ```
 
 2. Install dependencies:
