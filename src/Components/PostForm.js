@@ -1,8 +1,5 @@
-
-import '../PostForm.css'; 
-
 import React, { useState } from 'react';
-import { Loader2 } from 'lucide-react';
+import '../PostForm.css';
 
 const PostForm = ({ addPost }) => {
   const [title, setTitle] = useState('');
@@ -88,10 +85,10 @@ const PostForm = ({ addPost }) => {
             disabled={isSubmitting}
           >
             {isSubmitting ? (
-              <>
-                <Loader2 className="animate-spin mr-2 h-4 w-4" />
+              <span className="button-content">
+                <span className="spinner"></span>
                 Submitting...
-              </>
+              </span>
             ) : (
               'Create Post'
             )}
